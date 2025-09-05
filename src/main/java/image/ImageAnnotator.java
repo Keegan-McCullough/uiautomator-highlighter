@@ -17,6 +17,8 @@ once retrieved from the leaf nodes we need to draw the rectangle on the png file
       BufferedImage image = ImageIO.read(new File(inputPath));
       Graphics2D g = image.createGraphics();
 
+      g.setColor(Color.YELLOW);
+
       for (Node node : nodes){
           Rectangle rect = node.getBounds();
           if (rect != null){
