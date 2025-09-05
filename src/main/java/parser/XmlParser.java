@@ -16,7 +16,10 @@ public class XmlParser{
         doc.getDocumentElement().normalize();
 
         Element root = doc.getDocumentElement();
+        return parseNode(root);
+    }
 
+    private Node parseNode(Element root){
         Node node = new Node(
                 root.getAttribute("class"),
                 root.getAttribute("text"),
@@ -27,7 +30,7 @@ public class XmlParser{
         for (int i = 0; i < children.getLength(); i++) {
             org.w3c.dom.Node child = children.item(i);
             if (child instanceof Element) {
-                node.addChild((Node) child);
+                node.addChild(parseNode((Element) child));
             }
         }
         return node;
