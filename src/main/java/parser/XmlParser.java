@@ -19,14 +19,14 @@ public class XmlParser{
         return parseNode(root);
     }
 
-    private Node parseNode(Element root){
+    private Node parseNode(Element element){
         Node node = new Node(
-                root.getAttribute("class"),
-                root.getAttribute("text"),
-                root.getAttribute("bounds")
+                element.getAttribute("class"),
+                element.getAttribute("text"),
+                element.getAttribute("bounds")
         );
 
-        NodeList children = root.getChildNodes();
+        NodeList children = element.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
             org.w3c.dom.Node child = children.item(i);
             if (child instanceof Element) {
