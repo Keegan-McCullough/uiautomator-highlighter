@@ -18,6 +18,15 @@ once retrieved from the leaf nodes we need to draw the rectangle on the png file
       Graphics2D g = image.createGraphics();
 
       g.setColor(Color.YELLOW);
+      // setStroke helps visibility with overlapping boxes and add dashes
+      float[] dashPattern = {1, 1};
+      g.setStroke(new BasicStroke(
+                8,
+                      BasicStroke.CAP_BUTT,   // line cap
+                      BasicStroke.JOIN_BEVEL, // line join
+                      0,                      // miter limit
+                      dashPattern,            // dash pattern
+                      0));
 
       for (Node node : nodes){
           Rectangle rect = node.getBounds();

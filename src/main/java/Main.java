@@ -18,7 +18,6 @@ public class Main {
         XmlParser parser = new XmlParser();
         Node root = parser.parse(inputXml);
 
-        // Get all leaf nodes
         List<Node> leafNodes = root.getLeafNodes();
         System.out.println("Number of nodes:" + leafNodes.size());
         ImageAnnotator.annotate(inputPng, outputPng,leafNodes);
