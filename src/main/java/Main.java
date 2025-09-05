@@ -2,6 +2,8 @@ import image.ImageAnnotator;
 import model.Node;
 import parser.XmlParser;
 
+import java.io.*;
+import java.util.*;
 import java.io.File;
 import java.util.List;
 
