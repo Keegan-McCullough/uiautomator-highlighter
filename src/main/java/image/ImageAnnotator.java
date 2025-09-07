@@ -1,6 +1,6 @@
-package image;
+package main.java.image;
 
-import model.Node;
+import main.java.model.Node;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

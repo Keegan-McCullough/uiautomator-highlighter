@@ -1,6 +1,7 @@
-package parser;
+package main.java.parser;
 
-import model.Node;
+import main.java.model.Node;
+
 import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
