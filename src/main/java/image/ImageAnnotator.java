@@ -22,13 +22,18 @@ once retrieved from the leaf nodes we need to draw the rectangle on the png file
       float[] dashPattern = {1, 1};
       g.setStroke(new BasicStroke(
                 8,
-                      BasicStroke.CAP_BUTT,   // line cap
-                      BasicStroke.JOIN_BEVEL, // line join
-                      0,                      // miter limit
-                      dashPattern,            // dash pattern
+                      BasicStroke.CAP_BUTT,
+                      BasicStroke.JOIN_BEVEL,
+                      0,
+                      dashPattern,
                       0));
 
       for (Node node : nodes){
+          String ClassName = node.getClassName();
+          // skip non-application nodes contained in the screenshots
+          if (ClassName.startsWith("android.view")) {
+              continue;
+          }
           Rectangle rect = node.getBounds();
           if (rect != null){
               g.drawRect(rect.x, rect.y, rect.width, rect.height);

@@ -21,6 +21,9 @@ public class Node {
         this.children = new ArrayList<>();
     }
 
+    public String getClassName() {
+        return className;
+    }
     public Rectangle getBounds(){
         return bounds;
     }
