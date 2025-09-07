@@ -9,16 +9,12 @@ import java.util.List;
 import java.awt.*;
 
 public class ImageAnnotator{
-/*
-off of the node object we need to get the rectangle
-once retrieved from the leaf nodes we need to draw the rectangle on the png file
- */
   public static void annotate(String inputPath, String outputPath, List<Node> nodes)  throws Exception{
       BufferedImage image = ImageIO.read(new File(inputPath));
       Graphics2D g = image.createGraphics();
 
       g.setColor(Color.YELLOW);
-      // setStroke helps visibility with overlapping boxes and add dashes
+      // improving visibility with overlapping boxes by setting the stroke width and adding dashes
       float[] dashPattern = {1, 1};
       g.setStroke(new BasicStroke(
                 8,

@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        // Initialize helpers
         XmlParser parser = new XmlParser();
 
         // Get all files in input
@@ -28,11 +27,15 @@ public class Main {
             String inputPng = "input/" + baseName + ".png";
             String outputPng = "output/" + baseName + ".png";
 
-            // Parse XML into node tree
+            File pngFile = new File(inputPng);
+            if (!pngFile.exists()) {
+                System.out.println("Skipping " + baseName + ": no matching PNG found.");
+                continue;
+            }
+
+            // Parse XML into node tree and annotate
             Node root = parser.parse(inputXml);
             List<Node> leafNodes = root.getLeafNodes();
-
-            System.out.println(inputXml);
             ImageAnnotator.annotate(inputPng, outputPng, leafNodes);
         }
     }

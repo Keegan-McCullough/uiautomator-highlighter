@@ -5,18 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
-    /*
-    need to create the nodes that hold text its children and
-    the rectangle to be highlighted
-     */
     private String className;
-    private String text;
     private Rectangle bounds;
     private List<Node> children;
 
-    public Node(String className, String text, String boundary) {
+    public Node(String className, String boundary) {
         this.className = className;
-        this.text = text;
         this.bounds = parseBounds(boundary);
         this.children = new ArrayList<>();
     }

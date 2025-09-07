@@ -6,9 +6,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class XmlParser{
-    /* need to parse the xml files into the nodes that have
-    no other information contained in it and make this into a linked list
-     */
     public Node parse(String xmlPath) throws Exception {
         Document doc = DocumentBuilderFactory.newInstance()
                 .newDocumentBuilder()
@@ -22,7 +19,6 @@ public class XmlParser{
     private Node parseNode(Element element){
         Node node = new Node(
                 element.getAttribute("class"),
-                element.getAttribute("text"),
                 element.getAttribute("bounds")
         );
 
