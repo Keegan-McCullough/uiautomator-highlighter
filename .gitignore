@@ -1,0 +1,12 @@
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Compiled classes
+out/
+target/
+*.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
